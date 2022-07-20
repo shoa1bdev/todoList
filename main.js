@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", renderDate);
 function createTodo(e) {
 	e.preventDefault();
 	const text = (this.querySelector('[name=text]')).value;
+        If (text == "") { alert("Todo can't be Empty") } else {
 	const todo = {
 		text,
 		done: false,
@@ -36,7 +37,7 @@ function createTodo(e) {
 	appendTodo(todos,todoList);
 	localStorage.setItem('todos', JSON.stringify(todos));
 	this.reset();
-}
+}}
 
 function appendTodo(items = [], itemList) {
 	itemList.innerHTML = items.map((item, i) => {
