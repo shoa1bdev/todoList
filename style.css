@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+:root {
+	--theme-color: #2E2E2E;
+	--secondary-color: #F0efea;
+	--primary-color: #ffffff;
+}
+html,body {
+	height: 100%;
+	width: 100%;
+}
+ul {
+	list-style-type: none;
+}
+main {
+	min-height: 100%;
+	background: var(--secondary-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.todo-container {
+	background: var(--primary-color);
+	width: 300px;
+	height: 400px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 20px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.date-container,.add-todo {
+	width: 100%;
+	height: 15%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.date-container > .date {
+	font-size: 26px;
+}
+.date-container .day {
+	font-size: 18px;
+}
+p > .month {
+	font-size: 12px;
+}
+.add-todo {
+	height: 20%;
+	flex-direction: column;
+}
+.add-todo input,.add-todo button {
+	width: 100%;
+	height: 45%;
+	border:2px solid var(--theme-color);
+}
+.add-todo input {
+	padding:5px;
+}
+.add-todo button {
+	background: var(--theme-color);
+	color: #FFF;
+	transition: .25s all ease;
+}
+.add-todo button:hover {
+	background: transparent;
+	color: var(--theme-color);
+	transition: .25s all ease;
+}
+.todo-list {
+	width: 100%;
+	height: 60%;
+
+	display: grid;
+	grid-auto-rows: 40px;
+	overflow-y: scroll;
+}
+::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--theme-color); 
+	border-radius: 20px;
+}
+.todo {
+	width: 100%; 
+	display: flex;
+	gap:10px;
+	align-items: center;
+	position: relative;
+	transition: .5s all ease;
+}
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin-top: 3px;
+
+  font: inherit;
+  color: var(--theme-color);
+  width: 1.05em;
+  height: 1.05em;
+  border: 0.15em solid var(--theme-color);
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  box-shadow: inset 1em 1em var(--theme-color);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+.fa-trash {
+	position: absolute;
+	right: 0;
+	font-size: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+}
