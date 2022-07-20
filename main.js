@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", renderDate);
 function createTodo(e) {
 	e.preventDefault();
 	const text = (this.querySelector('[name=text]')).value;
-        If (text == "") { alert("Todo can't be Empty") } else {
+        If (text == "") { alert("Todo can't be Empty"); } else {
 	const todo = {
 		text,
 		done: false,
